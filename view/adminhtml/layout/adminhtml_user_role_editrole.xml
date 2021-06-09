@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2021 Amasty (https://www.amasty.com)
+ * @package Amasty_Rolepermissions
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="adminhtml.user.editroles">
+            <block class="Magento\Backend\Block\Widget\Tab" name="adminhtml.user.tab.tp2morderpricepermission.order_attribute">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Advanced: Order Attributes</argument>
+                    <argument name="class" xsi:type="string">ajax</argument>
+                    <argument name="url" xsi:type="url" path="tp2m_orderpricepermission/order/attributes">
+                        <param name="_current">1</param>
+                    </argument>
+                </arguments>
+            </block>
+
+            <action method="addTabAfter">
+                <argument name="name" xsi:type="string">order_role</argument>
+                <argument name="block" xsi:type="string">adminhtml.user.tab.tp2morderpricepermission.order_attribute</argument>
+                <argument name="after" xsi:type="string">amrolepermissions.products</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>
