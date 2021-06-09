@@ -23,7 +23,7 @@ class InstallSchema implements InstallSchemaInterface
          */
 
         $table = $installer->getConnection()
-            ->newTable($installer->getTable('tp2m_orderpricepermission_order_attribute'))
+            ->newTable($installer->getTable('tp2m_orderpricepermission_attribute'))
             ->addColumn(
                 'id',
                 \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
