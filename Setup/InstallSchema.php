@@ -41,7 +41,26 @@ class InstallSchema implements InstallSchemaInterface
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 255,
                 []
+            )
+            ->addColumn(
+                'invoice_attribute',
+                \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                255,
+                []
+            )
+            ->addColumn(
+                'shipment_attribute',
+                \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                255,
+                []
+            )
+            ->addColumn(
+                'creditmemo_attribute',
+                \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                255,
+                []
             );
+
         $installer->getConnection()->createTable($table);
 
         $installer->endSetup();

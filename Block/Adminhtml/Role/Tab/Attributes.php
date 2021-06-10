@@ -30,9 +30,27 @@ class Attributes extends \Magento\Backend\Block\Widget\Form\Generic
          *
          */
         $fieldset->addField('order_attribute', 'text', [
-            'label' => __('Allow Access To'),
+            'label' => __('Order Attribute'),
             'id'    => 'orderpricepermission[order_attribute]',
             'name'  => 'orderpricepermission[order_attribute]',
+        ]);
+
+        $fieldset->addField('invoice_attribute', 'text', [
+            'label' => __('Invoice Attribute'),
+            'id'    => 'orderpricepermission[invoice_attribute]',
+            'name'  => 'orderpricepermission[invoice_attribute]',
+        ]);
+
+        $fieldset->addField('shipment_attribute', 'text', [
+            'label' => __('Shipment Attribute'),
+            'id'    => 'orderpricepermission[shipment_attribute]',
+            'name'  => 'orderpricepermission[shipment_attribute]',
+        ]);
+
+        $fieldset->addField('creditmemo_attribute', 'text', [
+            'label' => __('Credit memo Attribute'),
+            'id'    => 'orderpricepermission[creditmemo_attribute]',
+            'name'  => 'orderpricepermission[creditmemo_attribute]',
         ]);
 
         $form->addValues($model->getData());
