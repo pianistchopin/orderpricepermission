@@ -1,0 +1,6 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+    <event name="controller_action_postdispatch_adminhtml_user_role_saverole">
+        <observer name="amasty_rolepermissions" instance="TP2M\Orderpricepermission\Observer\Admin\Rule\SaveObserver" />
+    </event>
+</config>
