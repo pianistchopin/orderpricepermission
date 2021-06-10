@@ -42,6 +42,18 @@ class SaveObserver implements ObserverInterface
             return;
         }
         $request = $observer->getRequest();
+
+        /**
+         * ---------------------------- my note---------------------------------
+         * in TP2M\Orderpricepermission\Block\Adminhtml\Role\Tab\Attributes,
+         *         $fieldset->addField('order_attribute', 'text', [
+         *              'label' => __('Allow Access To'),
+         *              'id'    => 'orderpricepermission[order_attribute]',
+         *              'name'  => 'orderpricepermission[order_attribute]',
+         *           ]);
+         * orderpricepermission  ==> request param
+         * [order_attribute] ==> table field of database
+         */
         $data = $request->getParam('orderpricepermission');
 
         if (!$data) {

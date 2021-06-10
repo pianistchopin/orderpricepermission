@@ -17,10 +17,17 @@ class Attributes extends \Magento\Backend\Block\Widget\Form\Generic
 
         $fieldset = $form->addFieldset('tp2morderpricepermission_attributes_fieldset', ['legend' => __('Attributes Access')]);
 
-        /*
+        /**
+         * ---------------------------- my note---------------------------------
          * match elementId and table field
          * $model->getData(): table field data
          * $form->addValues($model->getData()) ===> match and fill data to admin html fields
+         *
+         *
+         * in TP2M\Orderpricepermission\Observer\Admin\Rule\SaveObserver
+         * $data = $request->getParam('orderpricepermission');
+         * orderpricepermission  ==> param
+         *
          */
         $fieldset->addField('order_attribute', 'text', [
             'label' => __('Allow Access To'),
