@@ -6,6 +6,25 @@ namespace TP2M\Orderpricepermission\Block\Adminhtml\Order\View\Items\Renderer;
 
 class DefaultRenderer extends \Magento\Sales\Block\Adminhtml\Order\View\Items\Renderer\DefaultRenderer
 {
+    /**
+     * @var \TP2M\Orderpricepermission\Helper\Data
+     */
+    protected $helperData;
+
+    public function __construct(
+        \Magento\Backend\Block\Template\Context $context,
+        \Magento\CatalogInventory\Api\StockRegistryInterface $stockRegistry,
+        \Magento\CatalogInventory\Api\StockConfigurationInterface $stockConfiguration,
+        \Magento\Framework\Registry $registry,
+        \Magento\GiftMessage\Helper\Message $messageHelper,
+        \Magento\Checkout\Helper\Data $checkoutHelper,
+        \TP2M\Orderpricepermission\Helper\Data $helperData,
+        array $data = [])
+    {
+        $this->helperData = $helperData;
+        parent::__construct($context, $stockRegistry, $stockConfiguration, $registry, $messageHelper, $checkoutHelper, $data);
+    }
+
     public function getColumnHtml(\Magento\Framework\DataObject $item, $column, $field = null)
     {
         $html = '';
@@ -37,7 +56,9 @@ class DefaultRenderer extends \Magento\Sales\Block\Adminhtml\Order\View\Items\Re
             default:
                 $html = parent::getColumnHtml($item, $column, $field);
         }
-        if($column == "price-original"){
+
+        $excludeColumnArr = $this->helperData->getExcludeColumns('order');
+        if(in_array($column, $excludeColumnArr)){
             $html = "<div></div>";
         }
         return $html;
