@@ -67,7 +67,7 @@ class Data extends AbstractHelper
             $excludeColumnStr = $rule->getCreditmemoAttribute();
         }
 
-        $excludeColumnArr = explode(",", $excludeColumnStr);
+        $excludeColumnArr = explode(",", str_replace(' ', '',$excludeColumnStr));
 
         return $excludeColumnArr;
     }
