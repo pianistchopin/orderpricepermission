@@ -2,4 +2,5 @@
     <preference for="Magento\Sales\Block\Adminhtml\Order\View\Items\Renderer\DefaultRenderer" type="TP2M\Orderpricepermission\Block\Adminhtml\Order\View\Items\Renderer\DefaultRenderer" />
     <preference for="Magento\Sales\Ui\Component\Listing\Column\Price" type="TP2M\Orderpricepermission\Plugin\Sales\Ui\Component\Listing\Column\Price" />
     <preference for="Magento\Sales\Ui\Component\Listing\Column\PurchasedPrice" type="TP2M\Orderpricepermission\Plugin\Sales\Ui\Component\Listing\Column\PurchasedPrice" />
+    <preference for="Fooman\PrintOrderPdf\Block\Adminhtml\PrintOrderButton" type="TP2M\Orderpricepermission\Block\Adminhtml\PrintOrderButton" />
 </config>

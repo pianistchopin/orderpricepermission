@@ -9,7 +9,7 @@ class Collection extends \Magento\Sales\Model\ResourceModel\Order\Grid\Collectio
     protected function _renderFiltersBefore()
     {
         $sourceColumns = $this->getConnection()->describeTable($this->getMainTable());
-        unset($sourceColumns['status']);
+//        unset($sourceColumns['status']);
         $sourceColumns = array_keys($sourceColumns);
 
         /**
