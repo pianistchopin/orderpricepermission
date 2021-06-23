@@ -1,0 +1,29 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php /** @var $block \Magento\Sales\Block\Adminhtml\Items\Renderer\DefaultRenderer */ ?>
+<?php $_item = $block->getItem() ?>
+<?php $_item->setStoreId($_item->getInvoice()->getStoreId()) ?>
+<?php
+    $block->setPriceDataObject($_item);
+    $helper = $this->helper(\TP2M\Orderpricepermission\Helper\Data::class);
+    $excludeAttribute = $helper->getExcludeColumns('invoice');
+?>
+<tr>
+    <td class="col-product"><?= $block->getColumnHtml($_item, 'name') ?></td>
+    <td class="col-price">
+        <?= (!in_array('price', $excludeAttribute))?$block->getColumnHtml($_item, 'price'): '<div></div>'?>
+    </td>
+    <td class="col-qty"><?= (float) $_item->getQty() ?></td>
+    <td class="col-subtotal">
+        <?= (!in_array('subtotal', $excludeAttribute))?$block->getColumnHtml($_item, 'subtotal'): '<div></div>'?>
+    </td>
+    <td class="col-tax"><?= /* @noEscape */ $block->displayPriceAttribute('tax_amount') ?></td>
+    <td class="col-discount"><?= /* @noEscape */ $block->displayPriceAttribute('discount_amount') ?></td>
+    <td class="col-total last">
+        <?= (!in_array('total', $excludeAttribute))?$block->getColumnHtml($_item, 'total'): '<div></div>'?>
+    </td>
+</tr>
