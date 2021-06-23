@@ -35,6 +35,11 @@ class MassAction extends \Magento\Ui\Component\MassAction
                     &&'fooman_order_pdfdocs' != $action['type']
                     && 'print_shipping_label' != $action['type']
                     && 'fooman_pdforders' != $action['type']
+                    && 'pdfinvoices_order' != $action['type']
+                    && 'pdfshipments_order' != $action['type']
+                    && 'print_shipping_label' != $action['type']
+                    && 'fooman_shipment_pdfinvoices' != $action['type']
+                    && 'pdfcreditmemos_order' != $action['type']
                 )
                 { //add action which you remove
                     $allowedActions[] = $action;

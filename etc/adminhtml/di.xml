@@ -5,4 +5,7 @@
     <preference for="Fooman\PrintOrderPdf\Block\Adminhtml\PrintOrderButton" type="TP2M\Orderpricepermission\Block\Adminhtml\PrintOrderButton" />
     <preference for="Magento\Sales\Block\Adminhtml\Order\Invoice\View" type="TP2M\Orderpricepermission\Block\Adminhtml\Order\Invoice\View" />
     <preference for="Magento\Sales\Block\Adminhtml\Order\Creditmemo\View" type="TP2M\Orderpricepermission\Block\Adminhtml\Order\Creditmemo\View" />
+    <type name="Magento\Sales\Ui\Component\Control\PdfAction">
+        <plugin name="TP2M_Orderpricepermission::PdfAction" type="TP2M\Orderpricepermission\Plugin\Sales\Ui\Component\Control\PdfAction"/>
+    </type>
 </config>
